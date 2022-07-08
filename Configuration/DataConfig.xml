@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Enviroment>
+    <!-- TimeOut -->
+    <TimeOut>5</TimeOut>
+
+    <!-- General -->
+
+    <!-- Web -->
+
+    <BrowserType>chrome</BrowserType>
+    <url>https://demo.nopcommerce.com/</url>
+    <ImageRepo>C:\\FullAutomtionProject\\ImageRepository\\</ImageRepo>
+
+    <!-- Data Driven Testing -->
+    <DDTfile>/DDTFiles/</DDTfile>
+
+    <!-- Mobile -->
+    <UDID>ce041714b928ee1a02</UDID>
+    <AppPackage>com.shivgadhia.android.ukMortgageCalc</AppPackage>
+    <AppActivity>.MainActivity</AppActivity>
+    <AppiumServer>http://localhost:4723/</AppiumServer>
+
+    <!-- api -->
+    <urlAPI>https://rahulshettyacademy.com/</urlAPI>
+    <!-- Date Base ISQL -->
+    <DB_user>leadsbasket_user</DB_user>
+    <DB_password>leadsbasket_password</DB_password>
+    <DB_driver>com.mysql.jdbc.Driver</DB_driver>
+
+
+    <!-- Electron -->
+    <electronDriverPath>./Drivers/electrondriver.exe</electronDriverPath>
+    <electronAppPath>C:\Users\kirill\AppData\Local\Programs\todolist\Todolist.exe</electronAppPath>
+
+    <!-- windows -->
+    <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
+
+</Enviroment>

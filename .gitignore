@@ -1,0 +1,12 @@
+test
+target
+video
+build
+allure-results
+allure-report
+test-output
+.settings
+DB
+test-output
+.idea
+
