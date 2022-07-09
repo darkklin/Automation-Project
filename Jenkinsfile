@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                bat "docker build -t='darkklin/finalproject' ."
+                bat "docker build -t=darkklin/finalproject ."
             }
         }
         stage('Push Image') {
