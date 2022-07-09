@@ -10,8 +10,6 @@ import utilities.CommonOps;
 import utilities.ManageDDT;
 import workflows.WebFlows;
 
-import static com.codeborne.selenide.Selenide.*;
-
 @Listeners(utilities.Listeners.class)
 public class CommerceWeb extends CommonOps {
 

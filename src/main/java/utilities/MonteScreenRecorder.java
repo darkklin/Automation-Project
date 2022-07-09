@@ -1,4 +1,6 @@
 /*
+-->>> record screen is not relevant while running the tests on docker/selenium grid
+*/
 package utilities;
 
 import java.awt.AWTException;
@@ -67,4 +69,4 @@ public class MonteScreenRecorder extends ScreenRecorder
 }
 
 
- */
+

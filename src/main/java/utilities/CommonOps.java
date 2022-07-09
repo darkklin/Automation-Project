@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -40,8 +41,7 @@ public class CommonOps extends Base {
     public void startSession(String platformName) {
         platform = platformName;
         if (platform.equalsIgnoreCase("web"))
-            initBrowser(getData("BrowserType"));
-
+            initBrowser();
         else if (platform.equalsIgnoreCase("mobile"))
             initMobile();
         else if (platform.equalsIgnoreCase("api"))
@@ -81,54 +81,34 @@ public class CommonOps extends Base {
     }
 
     //Driver initialization
-    public static void initBrowser(String browserType) {
+    public static void initBrowser() {
+        host = "localhost";
 
-        if (browserType.equalsIgnoreCase("chrome"))
-            driver = initChromeDriver();
-        else if (browserType.equalsIgnoreCase("firefox"))
-            driver = initFireFoxDriver();
-        else
-            throw new RuntimeException("Invalid Browser type");
+        if (System.getProperty("HUB_HOST") != null) {
+            host = System.getProperty("HUB_HOST");
+        }
+        seleniumGridUrl = "http://" + host + ":4444/wd/hub";
+
+        if (System.getProperty("BROWSER") != null &&
+                System.getProperty("BROWSER").equalsIgnoreCase("chrome")) {
+            dcc = new ChromeOptions();
+        } else {
+            dcc = new FirefoxOptions();
+        }
+        try {
+            driver = new RemoteWebDriver(new URL(seleniumGridUrl), dcc);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 5);
         action = new Actions(driver);
         driver.get(getData("url"));
 //        screen = new Screen();
-        //initialization pages
+//        initialization pages
         ManagePages.initNopCommerce();
 
-
-    }
-
-    public static WebDriver initChromeDriver()  {
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
-
-        String host = "localhost";
-
-        dcc = new ChromeOptions();
-
-
-        if(System.getProperty("HUB_HOST") != null){
-            host = System.getProperty("HUB_HOST");
-        }
-
-        String completeUrl = "http://" + host + ":4444/wd/hub";
-        try {
-             driver = new RemoteWebDriver(new URL(completeUrl), dcc);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return driver;
-
-    }
-
-    public static WebDriver initFireFoxDriver() {
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        return driver;
 
     }
 
@@ -188,15 +168,7 @@ public class CommonOps extends Base {
     }
 
 
-    public static String generateRandom(String aToZ) {
 
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < 17; i++) {
-            int randIndex = random.nextInt(aToZ.length());
-            res.append(aToZ.charAt(randIndex));
-        }
-        return res.toString();
-    }
 
 
 }

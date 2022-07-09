@@ -1,5 +1,7 @@
 FROM openjdk:8u191-jre-alpine3.8
 
+RUN apk add curl jq
+
 WORKDIR /usr/share/selenium-docker
 
 ADD target/selenium-docker.jar             selenium-docker.jar
@@ -16,7 +18,11 @@ ADD TestNGMobile.xml		     TestNGMobile.xml
 ADD TestNGElectron.xml		     TestNGElectron.xml
 ADD TestNGApi.xml		         TestNGApi.xml
 
-ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG $MODULE
+ADD healthcheck.sh               healthcheck.sh
+RUN dos2unix healthcheck.sh
+
+ENTRYPOINT sh healthcheck.sh
+
 
 
 

@@ -32,8 +32,9 @@ public class Base {
 
     // Web
     protected static WebDriver driver;
-    protected static  WindowsDriver windowsDriver;
-    protected static ChromeOptions chromeOptions;
+    protected static String host;
+    protected static String seleniumGridUrl;
+
     //Rest API
     protected static RequestSpecification httpRequest;
     protected static Response response;
@@ -63,9 +64,7 @@ public class Base {
     protected static pageObjects.calculator.MainPage calcMain;
 
 
-
-
-
+    //pull data from xml file
     public static String getData(String nodeName) {
         File fXmlFile;
         DocumentBuilderFactory dbFactory;
@@ -87,6 +86,14 @@ public class Base {
         }
 
     }
+    public static String generateRandom(String text) {
 
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < 17; i++) {
+            int randIndex = random.nextInt(text.length());
+            res.append(text.charAt(randIndex));
+        }
+        return res.toString();
+    }
 
 }
