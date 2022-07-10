@@ -6,11 +6,7 @@
     <parameter name="PlatformName" value="electron"></parameter>
     <classes>
       <class name="sanity.ToDoListElectron">
-
-
       </class>
-
-
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
