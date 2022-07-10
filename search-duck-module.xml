@@ -5,15 +5,8 @@
   <test name="Web tests">
     <parameter name="PlatformName" value="web"></parameter>
     <classes>
-      <class name="sanity.CommerceWeb">
-
-<!--        <methods>-->
-<!--          <include name="test03_verifyMyAccountLinks" />-->
-<!--        </methods>-->
-
+      <class name="sanity.DuckduckgoWeb">
       </class>
-
-
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -12,8 +12,13 @@ public class ManageDDT extends CommonOps {
 
 
     @DataProvider(name = "Search-product-price")
-    public static Object[][] getDateObject() throws IOException, CsvException {
+    public static Object[][] getProductNaMae() throws IOException, CsvException {
         return readCsv(getData("DDTfile")+"product.csv");
+
+    }
+    @DataProvider(name = "Search-keyword")
+    public static Object[][] getKeyWord() throws IOException, CsvException {
+        return readCsv(getData("DDTfile")+"keyWord.csv");
 
     }
 
@@ -26,4 +31,6 @@ public class ManageDDT extends CommonOps {
         }
         return csvDataObject;
     }
+
+
 }

@@ -18,7 +18,6 @@ public class UIActions extends CommonOps {
     public static void updateText(WebElement elem, String text) {
         //wait
         wait.until(ExpectedConditions.visibilityOf(elem));
-
         elem.sendKeys(text);
     }
     @Step("update drop down ")

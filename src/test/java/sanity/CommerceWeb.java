@@ -1,9 +1,9 @@
 package sanity;
 
-import com.codeborne.selenide.testng.annotations.Report;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utilities.CommonOps;
@@ -19,7 +19,7 @@ public class CommerceWeb extends CommonOps {
     @Description("This test user registration")
 
     public void test01_registration() {
-        email = generateRandom("zxcvbnasdfg") + "@test.com";
+        email = RandomStringUtils.randomAlphabetic(10) + "@test.com";
         WebFlows.registration(email);
         Verifications.verifyTextInElement(registerPage.text_regCompleted, "Your registration completed");
         WebFlows.logOut();
@@ -46,7 +46,7 @@ public class CommerceWeb extends CommonOps {
     }
 
     @Test(description = "Test05_searchProductVerifyPrice",dataProvider = "Search-product-price",dataProviderClass = ManageDDT.class)
-    @Description("Test search product and verify Price item price")
+    @Description("Test search product and verify item price")
     public void Test05_SearchProductVerifyPrice(String productName,String price) {
         WebFlows.searchItem(productName);
         Verifications.verifyTextInElement(searchPage.text_price,price);

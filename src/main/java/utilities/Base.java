@@ -1,17 +1,16 @@
 package utilities;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.windows.WindowsDriver;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 import org.testng.asserts.SoftAssert;
 import org.w3c.dom.Document;
+import pageObjects.duckduckgo.DuckduckgoPage;
 import pageObjects.nopCommerce.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -55,6 +54,7 @@ public class Base {
     protected static HeaderPage headerPage;
     protected static MyaccountPage accountPage;
     protected static SearchPage searchPage;
+    protected static DuckduckgoPage duckSearhPage;
 
     // Page Object Mobile
     protected static pageObjects.mortgage.MainPage martgageMain;

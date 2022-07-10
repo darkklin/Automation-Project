@@ -17,13 +17,7 @@ import java.time.Duration;
 
 public class MobileAction extends UIActions {
 
-//    @Step("Update Element")
-//    public static void updateText(Mo elem, String text) {
-//        //wait
-//        wait.until(ExpectedConditions.visibilityOf(elem));
-//
-//        elem.sendKeys(text);
-//    }
+
     @Step("Tap on Element")
     public static void tap(MobileElement elem) {
         wait.until(ExpectedConditions.elementToBeClickable(elem));

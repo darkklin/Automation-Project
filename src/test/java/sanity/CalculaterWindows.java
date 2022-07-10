@@ -12,15 +12,15 @@ import workflows.WindowsCalculateFlows;
 public class CalculaterWindows extends CommonOps {
 
 
-    @Test(description = "test01 add Calculte")
-    @Description("test calculter 1+2=3 and verify result ")
+    @Test(description = "test01 add Calculate")
+    @Description("test calculate 1+2=3 and verify result ")
     public void test01_add() {
         Verifications.verifyText(WindowsCalculateFlows.calculte
                         (calcMain.btn_one, calcMain.btn_Plus, calcMain.btn_Two), "3");
 
     }
-    @Test(description = "test01 subtract Calculte")
-    @Description("test calculter 5-2=3 and verify result ")
+    @Test(description = "test01 subtract Calculate")
+    @Description("test calculate 5-2=3 and verify result ")
     public void test02_subtract() {
         Verifications.verifyText(WindowsCalculateFlows.calculte
                 (calcMain.btn_Five, calcMain.btn_Minus, calcMain.btn_Two), "3");
