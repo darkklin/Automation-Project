@@ -47,8 +47,18 @@ public class CheckoutPage {
     @FindBy(xpath = "//button[contains(text(),'Continue')]")
     public List<WebElement> btn_continue;
 
+    @FindBy(css = "div[class*='message-error']>ul>li")
+    public List<WebElement> text_errorMessage;
+
+    @FindBy(css = "button[onclick*='PaymentInfo.save']")
+    public WebElement btn_savePayMentinfo;
+
     @FindBy(css = "div[class*='section order-completed']>div>strong")
     public WebElement text_textSuccessPayment;
+
+    @FindBy(css = "input[type='text']")
+    public List<WebElement> fields_card;
+
 
 
 }

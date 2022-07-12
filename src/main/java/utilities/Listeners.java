@@ -19,9 +19,7 @@ public class Listeners extends CommonOps implements IInvokedMethodListener {
 
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
-
         if (method.isTestMethod() && !platform.equalsIgnoreCase("api")) {
-
             try {
 //                MonteScreenRecorder.startRecord(testResult.getName());
             } catch (Exception e) {

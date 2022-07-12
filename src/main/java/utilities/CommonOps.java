@@ -42,6 +42,8 @@ public class CommonOps extends Base {
         platform = platformName;
         if (platform.equalsIgnoreCase("web"))
             initBrowser();
+        else if (platform.equalsIgnoreCase("local"))
+            localtest();
         else if (platform.equalsIgnoreCase("mobile"))
             initMobile();
         else if (platform.equalsIgnoreCase("api"))
@@ -88,24 +90,20 @@ public class CommonOps extends Base {
             host = System.getProperty("HUB_HOST");
         }
         seleniumGridUrl = "http://" + host + ":4444/wd/hub";
-
         if (System.getProperty("BROWSER") != null &&
                 System.getProperty("BROWSER").equalsIgnoreCase("chrome")) {
 
             dcc = new ChromeOptions();
         } else {
 
-            WebDriverManager.chromedriver().setup();
+            dcc = new FirefoxOptions();
 
-            driver = new ChromeDriver();
-
-//            dcc = new FirefoxOptions();
         }
-//        try {
-//            driver = new RemoteWebDriver(new URL(seleniumGridUrl), dcc);
-//        } catch (MalformedURLException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            driver = new RemoteWebDriver(new URL(seleniumGridUrl), dcc);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 5);
@@ -114,11 +112,19 @@ public class CommonOps extends Base {
 //        screen = new Screen();
 //        initialization pages
         ManagePages.initNopCommerce();
-
-
     }
 
+    public void localtest(){
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 5);
+        action = new Actions(driver);
+        driver.get(getData("url"));
+        ManagePages.initNopCommerce();
 
+    }
     public static void initMobile() {
         dc.setCapability(MobileCapabilityType.UDID, getData("UDID"));
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, getData("AppPackage"));
