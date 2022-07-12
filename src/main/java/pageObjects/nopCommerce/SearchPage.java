@@ -7,4 +7,6 @@ public class SearchPage {
 
     @FindBy(css = "span[class*='actual-price']")
     public WebElement text_price;
+    @FindBy(css = "button[class*='add-to-cart-button']")
+    public WebElement btn_addToCart;
 }

@@ -1,9 +1,7 @@
 package sanity;
 
 import extensions.Verifications;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilities.CommonOps;
 import utilities.ManageDDT;

@@ -23,5 +23,7 @@ public class HeaderPage {
 
     @FindBy(xpath = "//form[@id='small-search-box-form']//button")
     public WebElement btn_search;
+    @FindBy(linkText = "shopping cart")
+    public WebElement link_shoppingCart;
 
 }

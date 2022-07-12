@@ -54,6 +54,9 @@ public class Base {
     protected static HeaderPage headerPage;
     protected static MyaccountPage accountPage;
     protected static SearchPage searchPage;
+    protected static ProductPage productPage;
+    protected static ShoppingCartPage shopCartPage;
+    protected static CheckoutPage checkoutPage;
     protected static DuckduckgoPage duckSearhPage;
 
     // Page Object Mobile

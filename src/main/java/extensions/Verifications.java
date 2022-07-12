@@ -18,6 +18,12 @@ public class Verifications extends CommonOps {
         wait.until(ExpectedConditions.visibilityOf(elem));
         assertEquals(elem.getText(), expected);
     }
+    @Step("verify Value Element")
+    public static void verifyValueInElement(WebElement elem, String expected) {
+
+        wait.until(ExpectedConditions.visibilityOf(elem));
+        assertEquals(elem.getAttribute("value"), expected);
+    }
 
     @Step("verify numbers of Elements")
     public static void numberOfElements(List<WebElement> elems, int expected) {

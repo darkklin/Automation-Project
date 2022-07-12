@@ -91,15 +91,21 @@ public class CommonOps extends Base {
 
         if (System.getProperty("BROWSER") != null &&
                 System.getProperty("BROWSER").equalsIgnoreCase("chrome")) {
+
             dcc = new ChromeOptions();
         } else {
-            dcc = new FirefoxOptions();
+
+            WebDriverManager.chromedriver().setup();
+
+            driver = new ChromeDriver();
+
+//            dcc = new FirefoxOptions();
         }
-        try {
-            driver = new RemoteWebDriver(new URL(seleniumGridUrl), dcc);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            driver = new RemoteWebDriver(new URL(seleniumGridUrl), dcc);
+//        } catch (MalformedURLException e) {
+//            throw new RuntimeException(e);
+//        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 5);

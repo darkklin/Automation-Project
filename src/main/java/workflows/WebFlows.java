@@ -3,6 +3,9 @@ package workflows;
 import extensions.UIActions;
 import io.qameta.allure.Step;
 import utilities.CommonOps;
+
+import java.util.function.Consumer;
+
 public class WebFlows extends CommonOps {
 
     @Step("Business Flow: login")
@@ -40,4 +43,53 @@ public class WebFlows extends CommonOps {
         UIActions.click(headerPage.btn_search);
 
     }
+    @Step("Business Flow: Add product to Shopping cart")
+    public static void  addProductToShoppingCart(String nameProduct){
+        searchItem(nameProduct);
+        UIActions.click(searchPage.btn_addToCart);
+        UIActions.click(productPage.btn_addToCart);
+        UIActions.click(headerPage.link_shoppingCart);
+
+    }
+
+    @Step("Business Flow: Agree to terms and press check out ")
+    public static void  checkOut(){
+        UIActions.click(shopCartPage.checkBox_agreeTerms);
+        UIActions.click(shopCartPage.btn_checkOut);
+
+    }
+    @Step("Business Flow:Fill address shipping details and navigate to payment with viza ")
+    public static void fillShippingAddressDetails(){
+        UIActions.updateDropDown(checkoutPage.country_select,"Israel");
+        checkoutPage.fields_shippingAdress.stream()
+                .skip(4)
+                .forEach(field -> UIActions.updateText(field,"demo"));
+
+        UIActions.click(checkoutPage.btn_save);
+
+    }
+    @Step("Business Flow:Choose shipping method - Next Day Air-")
+    public static void shippingMethod(){
+        UIActions.click(checkoutPage.radio_shppingOptions.get(2));
+        UIActions.click(checkoutPage.btn_continue.get(2));
+
+    }
+
+    @Step("Business Flow:Choose payment method -Credit Card- ")
+    public static void choosePaymentMethod(){
+        UIActions.click(checkoutPage.radio_paymentMethod.get(1));
+        UIActions.click(checkoutPage.radioBtn_creditCard);
+        UIActions.click(checkoutPage.btn_continue.get(3));
+
+
+    }
+    @Step("Business Flow:Fill credit card details ")
+    public static void fillcreditCard(String cardNmae,String cardNm,String year,String code){
+        UIActions.updateText(checkoutPage.field_cardholderName,cardNmae);
+        UIActions.updateText(checkoutPage.field_cardNumber,cardNm);
+        UIActions.updateDropDown(checkoutPage.select_expireYear,year);
+        UIActions.updateText(checkoutPage.field_cardCode,code);
+
+    }
+
 }

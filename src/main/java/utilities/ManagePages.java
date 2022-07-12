@@ -13,7 +13,9 @@ public class ManagePages extends Base {
         headerPage = PageFactory.initElements(driver, pageObjects.nopCommerce.HeaderPage.class);
         accountPage = PageFactory.initElements(driver, pageObjects.nopCommerce.MyaccountPage.class);
         searchPage = PageFactory.initElements(driver, pageObjects.nopCommerce.SearchPage.class);
-
+        productPage = PageFactory.initElements(driver, pageObjects.nopCommerce.ProductPage.class);
+        shopCartPage = PageFactory.initElements(driver, pageObjects.nopCommerce.ShoppingCartPage.class);
+        checkoutPage = PageFactory.initElements(driver, pageObjects.nopCommerce.CheckoutPage.class);
         // init duckduckgo page
         duckSearhPage = PageFactory.initElements(driver, pageObjects.duckduckgo.DuckduckgoPage.class);
     }

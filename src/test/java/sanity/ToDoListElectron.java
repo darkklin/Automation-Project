@@ -13,7 +13,7 @@ public class ToDoListElectron extends CommonOps {
 
     @Test(description = "Test01 - add new task")
     @Description("This test add new task and verify the list size  ")
-    public void test01_createNewTask() throws InterruptedException {
+    public void test01_createNewTask()  {
         ToDoFlows.addNewTask("Just Do it");
         Verifications.verifyNumber(ToDoFlows.countNmTask(),1);
     }
