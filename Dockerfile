@@ -18,6 +18,7 @@ ADD mobile-module.xml		     mobile-module.xml
 ADD electron-module.xml		     electron-module.xml
 ADD map-api-module.xml		     map-api-module.xml
 ADD search-duck-module.xml       search-duck-module.xml
+ADD commWeb-functional-module.xml   commWeb-functional-module.xml
 
 ADD healthcheck.sh               healthcheck.sh
 RUN dos2unix healthcheck.sh
