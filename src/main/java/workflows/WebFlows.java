@@ -53,6 +53,7 @@ public class WebFlows extends CommonOps {
     public static void addProductToShoppingCart(String nameProduct) {
         searchItem(nameProduct);
         UIActions.click(searchPage.btn_addToCart);
+        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS); //for firefox Lags need to find better solution
         UIActions.click(productPage.btn_addToCart);
         UIActions.click(headerPage.link_shoppingCart);
 
@@ -85,7 +86,6 @@ public class WebFlows extends CommonOps {
     @Step("Business Flow:Choose payment method -Credit Card- ")
     public static void choosePaymentMethod() {
         UIActions.click(checkoutPage.radio_paymentMethod.get(1));
-        Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
         UIActions.click(checkoutPage.radioBtn_creditCard);
         UIActions.click(checkoutPage.btn_continue.get(3));
 

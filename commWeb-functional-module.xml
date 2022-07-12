@@ -6,7 +6,6 @@
         <parameter name="PlatformName" value="web"></parameter>
         <classes>
             <class name="functional.CVVTest">
-
                 <methods>
                     <include name="test01_CVVValidation"/>
                 </methods>
