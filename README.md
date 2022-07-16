@@ -155,4 +155,4 @@ These tests can be developed in a very simple way, due to a lot of work with the
 
 ### _Known Issues:_
 Test Body section is missing from Allure report while using with Jenkins 
-solution - https://github.com/allure-framework/allure2/issues/1041
+Possible solution - https://github.com/allure-framework/allure2/issues/1041
