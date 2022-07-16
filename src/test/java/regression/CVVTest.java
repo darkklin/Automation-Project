@@ -1,4 +1,4 @@
-package functional;
+package regression;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.ITestContext;
