@@ -119,6 +119,7 @@ The project is an example of infrastructure for automation testing of different 
 ### **_Infrastructure project includes using of:_**
 * Page Object Design Pattern
 * Project Layers(Extensions/Work Flows/Test Cases...)
+* Using Lambda & Streams Functional Style Programming 
 * Support of Different Clients/Browsers
 * Failure Mechanism
 * Common Functionality
