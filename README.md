@@ -140,9 +140,10 @@ The project is an example of infrastructure for automation testing of different 
 
 ### _Tools & Frameworks used in the project:_
 * TestNG - Testing Framework
+* Maven - project management
 * Listeners - interface used to generate logs and customize the TestNG reports
-* MySQL Free Online DB - used for login to Grafana web page
-* [Jenkins](https://www.jenkins.io/)- for tests execution
+* [Jenkins](docker-image)- for tests execution
+* Selenium grid - run tests in parallel on multiple machines
 * REST Assured - for API testing
 * [Allure](http://allure.qatools.ru/) Reports - as the main reporting system
 
@@ -152,5 +153,5 @@ These tests can be developed in a very simple way, due to a lot of work with the
 [[Sanity Tests]](https://github.com/sashka999/FullStackFinalProject/tree/master/src/test/java/SanityTests)
 
 ### _Known Issues:_
-Sometimes can be conflicts with some dependencies the applications are using.
-Hence, the project is for DEMO purpose only. In production it should be divided into several projects.
+Test Body section is missing from Allure report while using with Jenkins 
+solution - https://github.com/allure-framework/allure2/issues/1041
