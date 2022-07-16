@@ -10,10 +10,10 @@ This project is based on selenium, TestNG, maven, allure report, and java versio
 To run test on Firefox or Chrome browsers with docker you need to install:
 * docker
 * docker-compose
-* selenium grid up and running 
+* selenium grid  
 ## Quick run test
 provide 3 parameters
-* HUB_HOST = IP adress of your selenium grid 
+* HUB_HOST = IP address of selenium grid 
 * Browser = Chrome/Firefox
 * Module = support 4 modules
 ```
