@@ -1,10 +1,30 @@
 ## **Full Stack Automation Project**
-[Short Video - Demonstration]()
+[Short Video - Demonstration](https://drive.google.com/file/d/1ddsjZ5Gh9PACZDX_-DlhT223e2kquy_j/view?usp=sharing)
 ### **_This project created to demonstrate my knowledge and skills in Automation Testing._**
 ***
 ### _About_
 The project demonstrates a smart automation infrastructure that allows us to test different kinds of applications that are easily maintained!
 This project is based on selenium, TestNG, maven, allure report, and java version 8. Can execute our automated tests inside a docker container using Jenkins, GitHub, DockerHub, and Selenium Grid.
+
+## Requirements
+To run test on Firefox or Chrome browsers with docker you need to install:
+* docker
+* docker-compose
+* selenium grid up and running 
+## Quick run test
+provide 3 parameters
+* HUB_HOST = IP adress of your selenium grid 
+* Browser = Chrome/Firefox
+* Module = support 4 modules
+```
+* commerce-web-module.xml
+* commWeb-regression-module.xml
+* map-api-module.xml
+* search-duck-module.xml 
+```
+```bash
+docker run -e HUB_HOST=localhost -e BROWSER=chrome -e MODULE=commerce-web-module.xml darkklin/finalproject
+```
 
 ## Project Structure
 ```bash
@@ -88,9 +108,7 @@ Automation-Project/
 ├─ search-duck-module.xml
 ├─ windows-module.xml
 ```
-
 ### _Project Overview_
-
 The project is an example of infrastructure for automation testing of different kinds of applications:
 * Web based application
 * Mobile application
