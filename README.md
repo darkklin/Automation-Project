@@ -3,7 +3,7 @@
 ### **_This project created to demonstrate my knowledge and skills in Automation Testing._**
 ***
 ### _About_
-The project demonstrates a smart automation infrastructure that allows us to test different kinds of applications that are easily maintained!
+The project demonstrates a smart automation infrastructure that allows us to test different kinds of applications and is easily maintained!
 This project is based on selenium, TestNG, maven, allure report, and java version 8. Can execute our automated tests inside a docker container using Jenkins, GitHub, DockerHub, and Selenium Grid.
 
 ## Requirements
@@ -154,5 +154,5 @@ These tests can be developed in a very simple way, due to a lot of work with the
 [[Sanity Tests]](https://github.com/sashka999/FullStackFinalProject/tree/master/src/test/java/SanityTests)
 
 ### _Known Issues:_
-Test Body section is missing from Allure report while using with Jenkins 
+Test Body section is missing from Allure report while using with Jenkins.
 Possible solution - https://github.com/allure-framework/allure2/issues/1041
