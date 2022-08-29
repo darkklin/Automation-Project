@@ -6,13 +6,9 @@ import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.nopCommerce.CheckoutPage;
 import utilities.CommonOps;
 import utilities.ManageDDT;
 import workflows.WebFlows;
-
-import java.util.function.Consumer;
-
 @Listeners(utilities.Listeners.class)
 public class CommerceWeb extends CommonOps {
 
