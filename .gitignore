@@ -1,0 +1,13 @@
+target
+video
+build
+allure-results
+allure-report
+test-output
+.settings
+test-output
+.idea
+volume
+FullAutomtionProject.iml
+runTest
+

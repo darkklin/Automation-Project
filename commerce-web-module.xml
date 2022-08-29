@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Suite" parallel="false">
+
+  <test name="Web tests">
+    <parameter name="PlatformName" value="web"></parameter>
+    <classes>
+      <class name="sanity.CommerceWeb">
+
+<!--        <methods>-->
+<!--          <include name="test03_verifyMyAccountLinks" />-->
+<!--        </methods>-->
+
+      </class>
+
+
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
