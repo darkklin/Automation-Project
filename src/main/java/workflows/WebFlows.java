@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 import utilities.CommonOps;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 
 public class WebFlows extends CommonOps {
 
