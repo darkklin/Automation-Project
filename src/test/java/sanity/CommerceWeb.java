@@ -29,7 +29,7 @@ public class CommerceWeb extends CommonOps {
     @Description("This test verifies login")
     public void test02_loginVerify() {
         WebFlows.login(email, "123456");
-        Verifications.verifyTextInElement(mainPage.text_header01, "Welcome to our storee");
+        Verifications.verifyTextInElement(mainPage.text_header01, "Welcome to our store");
     }
 
     @Test(description = "Test03 - verifyMyAccountLinks")
